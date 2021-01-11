@@ -53,7 +53,7 @@ partial_label_train = label_train[10000:]
 model.compile(optimizer = 'rmsprop', loss = 'binary_crossentropy', metrics = ['accuracy'])
 
 #Use history to see loss optimization
-history = model.fit(partial_tensor_train, partial_label_train, epochs = 20, batch_size = 512, validation_data = (tensor_val, label_val))
+history = model.fit(partial_tensor_train, partial_label_train, epochs = 5, batch_size = 512, validation_data = (tensor_val, label_val))
 
 #Graph the loss function
 import matplotlib.pyplot as grapher
@@ -62,7 +62,7 @@ history_dict = history.history
 loss_values = history_dict['loss']
 val_loss_values = history_dict['val_loss']
 
-epochs = range(1, 21)
+epochs = range(1, 6)
 
 grapher.plot(epochs, loss_values, 'bo', label = "Training Set")
 grapher.plot(epochs, val_loss_values, 'b', label = "Validation Set")
