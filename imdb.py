@@ -73,6 +73,7 @@ grapher.legend()
 
 grapher.savefig('Figure1')
 
+"""
 #Graph accuracy
 grapher.clf()
 acc_values = history_dict['acc']
@@ -86,3 +87,4 @@ grapher.ylabel('Accuracy')
 grapher.legend()
 
 grapher.savefig('Figure2')
+"""
