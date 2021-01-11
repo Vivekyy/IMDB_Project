@@ -37,7 +37,7 @@ model = models.Sequential()
 #Add dense layers to model
 model.add(layers.Dense(16, activation = 'relu', input_shape = (10000,))) #inputs are 10000 length vectors
 model.add(layers.Dense(16, activation = 'relu'))
-model.add(layers.Dense(1), activation = 'sigmoid') #sigmoid to output probability between 0-1 of positive review
+model.add(layers.Dense(1, activation = 'sigmoid')) #sigmoid to output probability between 0-1 of positive review
 
 #Validation set of 10000 reviews, split up training set
 tensor_val = tensor_train[:10000]
@@ -64,7 +64,6 @@ val_loss_values = history_dict['val_loss']
 
 epochs = range(1, 21)
 
-grapher.figure(1)
 grapher.plot(epochs, loss_values, 'bo', label = "Training Set")
 grapher.plot(epochs, val_loss_values, 'b', label = "Validation Set")
 
@@ -72,10 +71,10 @@ grapher.xlabel('Epochs')
 grapher.ylabel('Loss')
 grapher.legend()
 
-grapher.show()
+grapher.savefig('Figure1')
 
 #Graph accuracy
-grapher.figure(2)
+grapher.clf()
 acc_values = history_dict['acc']
 val_acc_values = history_dict['val_acc']
 
@@ -86,4 +85,4 @@ grapher.xlabel('Epochs')
 grapher.ylabel('Accuracy')
 grapher.legend()
 
-grapher.show()
+grapher.savefig('Figure2')
