@@ -71,7 +71,7 @@ grapher.xlabel('Epochs')
 grapher.ylabel('Loss')
 grapher.legend()
 
-grapher.savefig('Figure1')
+grapher.show('Figure1')
 
 #Graph accuracy
 grapher.clf()
@@ -85,4 +85,4 @@ grapher.xlabel('Epochs')
 grapher.ylabel('Accuracy')
 grapher.legend()
 
-grapher.savefig('Figure2')
+grapher.show('Figure2')
